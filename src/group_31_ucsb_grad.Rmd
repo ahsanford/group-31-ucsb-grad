@@ -21,9 +21,10 @@ ucsb_grad <- read.csv(here("data", "ucsb_grad_data.csv"))
 
 # Create gglot
 ```{r}
-ggplot(data = ucsb_grad, aes(x = year_abbr, y = domestic_enrollment, fill = ethnicity)) +
-  geom_col(position = "fill") + 
-  labs(x = "Year", y = "Domestic Enrollment", title = "Domestic Enrollment per Year based on Ethnicity")
+ggplot(data = ucsb_grad, aes(x = year_abbr, y = domestic_enrollment, fill = ethnicity)) + # color based on ethnicity
+  geom_col(position = "fill") + # convert columns to proportions
+  labs(x = "Year", y = "Domestic Enrollment", title = "Domestic enrollment per year based on ethnicity") + # add axes labels and title
+  theme_minimal()
 ```
 
-
+Figure 1. Domestic enrollment per year based on ethnicity: Domestic enrollment for UCSB graduate programs by proportion of student ethnicity from 2008 to 2019.
